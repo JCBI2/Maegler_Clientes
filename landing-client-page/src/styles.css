@@ -1,0 +1,9 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+body{
+    color: #F7F7F7;
+    font-family: 'Mukta', sans-serif;
+}
+/* You can add global styles to this file, and also import other style files */

@@ -1,0 +1,52 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+body{
+    background-color: #F7F7F7;
+}
+
+.nb{
+    background-color: #F9F9F9;
+}
+
+.main-menu{
+    color: #E06D60;
+}
+
+.logo-favicon{
+    padding-left: 15px;
+}
+
+.primary-div{
+    background-color: #F9F9F9
+}
+
+.img-primary{
+    margin: auto;
+    padding-top: 16px;
+    width: 17rem;
+    height: 9rem;
+}
+
+.btn-registry{
+    background-color: #4A8CE1;
+    color: #fff;
+    padding: 7px;
+    border-radius: 8px;
+    margin-left: 32%;
+    margin-bottom: 50px;
+}
+
+.p-primary{
+    color: #3D4D61;
+}
+
+.question{
+    color: #396CAD;
+}
+
+.primary-info{
+    margin-top: 6px;
+    margin-bottom: 13px;
+}
