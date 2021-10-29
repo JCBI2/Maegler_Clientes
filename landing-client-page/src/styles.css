@@ -6,4 +6,63 @@ body{
     color: #F7F7F7;
     font-family: 'Mukta', sans-serif;
 }
+
+button{
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.rojo{
+    background-color: #F7F7F7;
+    border-radius: 19px;
+    color: #DA5748;
+}
+
+
+.btn-menuR{
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.btn-menuR:active{
+    background-color: #F7F7F7;
+    border-radius: 14px;
+    color: #DA5748;
+}
+
+.btn-menuS{
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 5.6rem;
+}
+
+.btn-menuS:active{
+    background-color: #F7F7F7;
+    border-radius: 14px;
+    color: #DA5748;
+}
+
+.btn-menuC{
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 5.5rem;
+    padding-right: 5.4rem;
+}
+
+.btn-menuC:active{
+    background-color: #F7F7F7;
+    border-radius: 14px;
+    color: #DA5748;
+}
+
+.question-fre{
+    margin-top: 30rem;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.question-fre:active{
+    background-color: #F7F7F7;
+    border-radius: 14px;
+    color: #DA5748;
+}
 /* You can add global styles to this file, and also import other style files */

@@ -7,8 +7,7 @@
       <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
         <div class="ml-3 relative">
           <div>
-            <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
-              <span class="sr-only">Open main menu</span>
+            <button id="btnmenu" (click)="menu()" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400" aria-controls="mobile-menu" aria-expanded="false">
               <svg class="main-menu block h-9 w-9" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
               </svg>
@@ -20,6 +19,9 @@
     </div>
   </div>
 </nav>
+<div id="menuOpened">
+
+</div>
 <div class="primary-div mx-auto col pt-20">
   <div>
     <img class="img-primary" src="./assets/Logo.png">
@@ -89,7 +91,7 @@
     <img class="m-auto mt-12" src="./assets/building.svg">
   </div>
 
-  <footer class="footer bg-white relative pt-1 mb-4">
+  <footer class="footer bg-white static pt-1">
     <div class="grid grid-cols-3 pr-40 pl-36  w-96 mt-12">
       <img class="m-auto" src="./assets/instagram.svg">
       <img class="m-auto" src="./assets/facebook.svg">
@@ -99,7 +101,7 @@
       <div class="text-center text-sm p-primary">
         Copyright © 2021 Mægler Technologies
       </div>
-      <div class="text-center text-sm p-primary">
+      <div class="text-center text-sm p-primary mb-4">
         All the rights reserved
       </div>
     </div>
