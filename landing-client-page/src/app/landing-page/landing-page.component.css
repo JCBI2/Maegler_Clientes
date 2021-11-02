@@ -6,6 +6,10 @@ body{
     background-color: #F7F7F7;
 }
 
+.menu-opened{
+    display: none;
+}
+
 .nb{
     background-color: #F9F9F9;
 }
@@ -97,11 +101,11 @@ body{
 
 .dealers{
     margin-top: 2.6rem;
-    background-image: url("../assets/VectorWave2.png");
+    background-image: url("../../assets/VectorWave2.png");
     height: 33.3rem;
 }
 
 .promote{
-    background-image: url("../assets/VectorWave3.png");
+    background-image: url("../../assets/VectorWave3.png");
     height: 35.2rem;
 }
