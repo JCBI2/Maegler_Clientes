@@ -1,0 +1,107 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+body{
+    background-color: #F7F7F7;
+}
+
+.nb{
+    background-color: #F9F9F9;
+}
+
+.main-menu{
+    color: #E06D60;
+}
+
+.logo-favicon{
+    padding-left: 15px;
+}
+
+.primary-div{
+    background-color: #F9F9F9
+}
+
+.img-primary{
+    margin: auto;
+    padding-top: 16px;
+    width: 17rem;
+    height: 9rem;
+}
+
+.img-dealer{
+    margin: auto;
+}
+
+.btn-registry{
+    background-color: #4A8CE1;
+    color: #fff;
+    padding: 7px;
+    border-radius: 8px;
+    margin-left: 32%;
+    margin-bottom: 50px;
+}
+
+.btn-postulate{
+    background-color: #E06D60;
+    color: #fff;
+    padding: 7px;
+    border-radius: 8px;
+    margin-left: 36%;
+    margin-top: 2rem;
+}
+
+.btn-contact{
+    background-color: #E06D60;
+    color: #fff;
+    padding: 7px;
+    border-radius: 8px;
+    margin-left: 34%;
+}
+
+.p-primary{
+    color: #3D4D61;
+}
+
+.info-blue{
+    color: #396CAD;
+}
+
+.info-white{
+    color: #fff;
+}
+
+.info-dark-blue{
+    color: #203C61;
+    font-size: 1.3rem;
+    margin-left: 4.7rem;
+}
+
+.info-dark-blue-s{
+    color: #203C61;
+    font-size: 1.3rem;
+    margin-left: 10rem;
+}
+
+.primary-info{
+    margin-top: 6px;
+    margin-bottom: 13px;
+}
+
+.icon-category{
+    margin: auto;
+    padding-top: 16px;
+    width: 12rem;
+    height: 6rem;
+}
+
+.dealers{
+    margin-top: 2.6rem;
+    background-image: url("../assets/VectorWave2.png");
+    height: 33.3rem;
+}
+
+.promote{
+    background-image: url("../assets/VectorWave3.png");
+    height: 35.2rem;
+}
