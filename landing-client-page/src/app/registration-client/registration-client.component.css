@@ -1,0 +1,51 @@
+input{
+    background-color: #E48378;
+}
+
+.body-page{
+    background-color: #F9F9F9;
+}
+
+.main-menu{
+    color: #E06D60;
+}
+
+.logo-favicon{
+    padding-left: 15px;
+}
+
+.menu-opened{
+    display: none;
+}
+
+.nb{
+    background-color: #F7F7F7;
+}
+
+.registration{
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../../assets/bgRegistration.png");
+    background-repeat: no-repeat;
+}
+
+.text-registration{
+    color: #E06D60;
+    font-size: 2rem;
+}
+
+.form-registration{
+    padding-left: 8%;
+    padding-right: 8%;
+}
+
+.form-accept{
+    padding-left: 40%;
+    padding-right: 38%;
+    background-color: #D33B2A;
+
+}
+
+.btn-login{
+    color: #992B1E;
+}
