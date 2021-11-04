@@ -1,1 +1,83 @@
-<p>login works!</p>
+<div class="body-page">
+    <nav class="nb bg-gray-800 fixed w-full pt-2">
+        <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+          <div class="relative flex items-center justify-between h-16">
+            <div class="logo-favicon">
+              <img class="block lg:hidden h-8 w-auto" src="./assets/Favicon.png">
+            </div>
+            <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+              <div class="ml-3 relative">
+                <div>
+                  <button id="btnmenu" (click)="menu()" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400" aria-controls="mobile-menu" aria-expanded="false">
+                    <svg class="main-menu block h-9 w-9" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                  </button>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </nav>
+
+    <div class="menu-opened" id="menuOpened">
+        <div class="container-menu">
+            <button routerLink="/registration" routerLinkActive="active" class="ml-12 mr-8 mt-8 pl-24 pr-24 btn-menuR" type="button">
+              REGISTRATE
+            </button>
+            <button routerLink="/login" routerLinkActive="active" class="ml-12 mt-8 pl-20 btn-menuS" type="button">
+              INICIAR SESIÓN
+            </button>
+            <button class="ml-12 mt-8 btn-menuC" type="button">
+              CONTÁCTANOS
+            </button>
+            <button class="question-fre ml-12 pl-16 pr-20" type="button">
+              Preguntas Frecuentes
+            </button>
+        </div>
+    </div>
+
+    <div class="login">
+        <div class="text-login text-center font-bold pt-20">
+            Inicia Sesión
+          </div>
+
+          <form class="w-full max-w-sm form-login mt-60">
+            <div class="text-center">
+                Correo Electrónico
+              </div>
+              <input class="pt-1.5 pb-1.5 rounded-lg pl-16 pr-16 mt-1.5 mb-1.5" type="text">
+              <div class="text-center">
+                Contraseña
+              </div>
+              <input class="pt-1.5 pb-1.5 rounded-lg pl-16 pr-16 mt-1.5 mb-1.5" type="text">
+              <button class="form-login-btn mt-1.5 mb-1.5 font-bold pt-1.5 pb-1.5 rounded-lg" type="button">
+                INGRESAR
+              </button>
+          </form>
+
+          <div class="grid grid-cols-2 text-center pl-12">
+            <p class="text-center text-right font-bold">¿No tienes cuenta?</p>
+            <button class="btn-registration text-left ml-1.5 font-bold" routerLink="/registration" routerLinkActive="active" type="button">Registrate</button>
+          </div>
+          
+          <footer class="footer bg-footer static pt-20 pb-1">
+              <div class="grid grid-cols-3 pr-40 pl-36  w-96 mt-12">
+                <img class="m-auto" src="./assets/instagram-w.svg">
+                <img class="m-auto" src="./assets/facebook-w.svg">
+                <img class="m-auto" src="./assets/twitter-w.svg">
+              </div>
+              <div class="mt-4">
+                <div class="text-center text-sm p-primary">
+                  Copyright © 2021 Mægler Technologies
+                </div>
+                <div class="text-center text-sm p-primary mb-4">
+                  All the rights reserved
+                </div>
+              </div>
+          </footer>
+    </div>
+
+
+</div>

@@ -1,0 +1,116 @@
+input{
+    background-color: #659DE6;
+}
+
+.container-menu{
+    background-color: #4A8CE1;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    margin-top: 4.5rem;
+    opacity: 93%;
+}
+
+.btn-menuR{
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.btn-menuR:active{
+    background-color: #F7F7F7;
+    border-radius: 14px;
+    color: #4A8CE1;
+}
+
+.btn-menuS{
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 5.6rem;
+}
+
+.btn-menuS:active{
+    background-color: #F7F7F7;
+    border-radius: 14px;
+    color: #4A8CE1;
+}
+
+.btn-menuC{
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 5.5rem;
+    padding-right: 5.4rem;
+}
+
+.btn-menuC:active{
+    background-color: #F7F7F7;
+    border-radius: 14px;
+    color: #4A8CE1;
+}
+
+.question-fre{
+    margin-top: 30rem;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.question-fre:active{
+    background-color: #F7F7F7;
+    border-radius: 14px;
+    color: #4A8CE1;
+}
+
+.body-page{
+    background-color: #F9F9F9;
+}
+
+.main-menu{
+    color: #4A8CE1
+}
+
+.menu-opened{
+    display: none;
+}
+
+.nb{
+    background-color: #F7F7F7;
+}
+
+.logo-favicon{
+    padding-left: 15px;
+}
+
+.login{
+    width: 100vw;
+    height: 100vh;
+    background-image: url("../../assets/bgLogin.png");
+    background-repeat: no-repeat;
+}
+
+.text-login{
+    color: #4A8CE1;
+    font-size: 2rem;
+}
+
+.p-primary{
+    color: #fff;
+}
+
+.bg-footer{
+    background-color: #4A8CE1
+}
+
+.form-login{
+    padding-left: 8%;
+    padding-right: 8%;
+}
+
+.form-login-btn{
+    padding-left: 38%;
+    padding-right: 38%;
+    background-color: #1E61B9
+
+}
+
+.btn-registration{
+    color: #203C61
+}
