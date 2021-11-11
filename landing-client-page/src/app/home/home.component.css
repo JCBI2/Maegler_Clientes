@@ -1,0 +1,42 @@
+.nb{
+    background-color: #F9F9F9;
+}
+
+.logo-favicon{
+    padding-left: 15px;
+}
+
+.main-menu{
+    color: #E06D60;
+}
+
+.primary-div{
+    background-color: #F9F9F9;
+}
+
+.img-primary{
+    margin: auto;
+    padding-top: 16px;
+    width: 17rem;
+    height: 9rem;
+}
+
+.welcome{
+        color: #396CAD;
+        font-size: larger;
+}
+
+.ip-search{
+    background-color: #DFDFDF;
+    border-radius: 9px;
+    color: #777777;
+    border: #959595 1px solid;
+}
+
+.container-categories{
+    background-color: #F7F7F7;
+}
+
+.categories{
+    color: #396CAD;
+}
