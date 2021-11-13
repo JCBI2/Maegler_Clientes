@@ -54,3 +54,22 @@ export const PRODUCTOS: Productos[] = [
     {nombre: "Producto", descripcion: "lorem ipsus", imagen: "./assets/Categories/Restaurantes/Burger King/Bacon King.png"},
     {nombre: "Producto", descripcion: "lorem ipsus", imagen: "./assets/Categories/Restaurantes/Burger King/Bacon King.png"}
 ]
+
+
+export interface Resumen{
+    nombre: String;
+    imagen: String;
+    precio: number;
+    cantidad: number;
+}
+
+export const RESUMEN: Resumen[] = [
+    {nombre: "Producto", 
+    imagen: "./assets/Categories/Restaurantes/Burger King/Bacon King.png",
+    precio: 326,
+    cantidad: 1},
+    {nombre: "Producto", 
+    imagen: "./assets/Categories/Restaurantes/Burger King/Bacon King.png",
+    precio: 326,
+    cantidad: 1}
+]

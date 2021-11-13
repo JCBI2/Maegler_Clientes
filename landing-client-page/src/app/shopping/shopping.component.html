@@ -1,1 +1,72 @@
-<p>shopping works!</p>
+<nav class="nb bg-gray-800 fixed w-full pt-2">
+    <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+      <div class="relative flex items-center justify-between h-16">
+        <div class="logo-favicon">
+          <img class="block lg:hidden h-8 w-auto" src="./assets/Favicon.png">
+        </div>
+        <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+        <div>
+            <button type="button" class="btn-shopping inline-flex items-center justify-center p-2 rounded-md">
+                <i class="icon fas fa-shopping-cart"></i>
+            </button>
+            <button type="button" class="btn-bag inline-flex items-center justify-center p-2 rounded-md" routerLink="/home/record" routerLinkActive="active">
+                <i class="icon fas fa-shopping-bag"></i>
+            </button>    
+        </div>
+          <div class="ml-3 relative">
+            <div>
+                <button id="btnmenu" (click)="menu()" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400">
+                <svg class="main-menu block h-9 w-9" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</nav>
+
+<div class="menu-opened" id="menuOpened">
+    <app-menu-l></app-menu-l>
+</div>
+
+<div class="pt-24">
+    <div>
+        <div class="area-summary items-center">
+            <i class="fas fa-arrow-left icon-left ml-8"></i>
+            <p class="summary">RESUMEN DE TU ORDEN</p>
+        </div>
+        <div class="grid grid-cols-3 mt-8 items-center p-4 summary-business">
+            <img src="./assets/Categories/Restaurantes/Burger King/Logo.jpg">
+            <p class="name-business text-center">Burger King</p>
+            <div>
+                <button class="text-sm btn-cancel" type="button">CANCELAR ORDEN</button>
+            </div>
+        </div>
+        <div *ngFor = "let res of resumen">
+            <div class="grid grid-cols-4 pb-4 mt-4 mb-4 p-4 items-center">
+                <div>
+                    <img src="{{res.imagen}}">
+                </div>
+                <div class="ml-4">
+                    <p class="name-product text-center">{{res.nombre}}</p>
+                    <p class="price-product text-center">L {{res.precio}}.00</p>
+                </div>
+                <div>
+                    <div class="cantidad-product p-2">{{res.cantidad}}</div>
+                </div>
+                <div class="ml-8">
+                    <i class="fas fa-trash-alt icon-trash"></i>
+                </div>
+            </div>
+        </div>
+        <div class="grid grid-cols-2 summary-price">
+            <p class="subtotal ml-4">Subtotal</p>
+            <p class="subtotalC">L 732.00</p>
+        </div>
+        <button class="btn-procesar mt-32">PROCESAR ORDEN</button>
+    </div>
+
+    <app-footer></app-footer>
+</div>

@@ -1,0 +1,105 @@
+.nb{
+    background-color: #F9F9F9;
+}
+
+.menu-opened{
+    display: none;
+}
+
+.logo-favicon{
+    padding-left: 15px;
+}
+
+.main-menu{
+    color: #E06D60;
+}
+
+.btn-shopping{
+    color: #4A8CE1;
+}
+
+.btn-bag{
+    color:black;
+}
+
+.icon{
+    font-size: 25px;
+}
+
+.icon-left{
+    color: #B2B2B2;
+    font-size: 2rem;
+
+}
+
+.summary{
+    color: #203C61;
+    width: 180%;
+    font-weight: 600;
+}
+
+.area-summary{
+    grid-template-columns: repeat(2, minmax(0, 0.3fr));
+    display: grid;
+}
+
+.btn-procesar{
+    background-color: #E06D60;
+    color: #fff;
+    padding: 0.25rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: 25%;
+}
+
+.btn-cancel{
+    color: #A5A5A5;
+    border: #A5A5A5 2px solid;
+    border-radius: 12px;
+    font-size: xx-small;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.summary-business{
+    border-bottom: #B2B2B2 2px solid;
+}
+
+.name-business{
+    color: #396CAD;
+}
+
+.name-product{
+    color:#396CAD;
+}
+
+.price-product{
+    color: #4A4A4A;
+}
+
+.icon-trash{
+    color: #B9B9B9;
+    font-size: 1.5rem;
+}
+
+.cantidad-product{
+    background-color: #B9B9B9;
+    color: black;
+    width: 30%;
+    height: 44%;
+    border-radius: 66px;
+    margin-left: 74%;
+}
+
+.subtotal{
+    color: #4A4A4A;
+}
+
+.subtotalC{
+    color: #4A4A4A;
+    margin-left: 55%;
+}
+
+.summary-price{
+    border-top: #B2B2B2 2px solid;
+}
