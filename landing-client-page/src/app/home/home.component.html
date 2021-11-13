@@ -6,11 +6,11 @@
         </div>
         <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
         <div>
-            <button type="button" class="inline-flex items-center justify-center p-2 rounded-md">
-                <img src="./assets/Carrito.svg">
+            <button type="button" class="btn-shopping inline-flex items-center justify-center p-2 rounded-md" routerLink="/home/shopping" routerLinkActive="active">
+                <i class="icon fas fa-shopping-cart"></i>
             </button>
-            <button type="button" class="inline-flex items-center justify-center p-2 rounded-md">
-                <img src="./assets/Bolsa.svg">
+            <button type="button" class="btn-bag inline-flex items-center justify-center p-2 rounded-md" routerLink="/home/record" routerLinkActive="active">
+                <i class="icon fas fa-shopping-bag"></i>
             </button>    
         </div>
           <div class="ml-3 relative">
@@ -44,11 +44,38 @@
 </div>
 
 <div class="container-categories">
-  <div class="categories text-2xl font-bold ml-4">
+  <div class="categories text-2xl font-bold ml-4 text-center">
     Categorías
   </div>
-  <div class="grid grid-cols-3">
 
+
+
+  <div>
+    <div class="grid grid-cols-3 p-4">
+      <div class="containter-categorie m-1" *ngFor="let categoria of categorias" (click)="onSelect(categoria)">
+          <div class="m-auto container-img">
+              <img src="{{categoria.icono}}">
+          </div>
+          <p class="text-center font-bold name-categorie mb-1">{{categoria.nombre}}</p>
+      </div>
+    </div>
+    
+    
+    <div class="hidden">
+        <div>
+    
+        </div>
+    </div>
+    
+    <div class="hidden">
+        <div>
+            
+        </div>
+    </div>
   </div>
+
+  
+
+
   <app-footer></app-footer>
 </div>

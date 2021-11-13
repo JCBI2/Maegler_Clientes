@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {CATEGORIAS, Categorias, EMPRESAS, Empresas} from '../Listado-Business';
 
 @Component({
   selector: 'app-home',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  categorias = CATEGORIAS;
+
+  empresas = EMPRESAS;
 
   ngOnInit(): void {
   }
@@ -32,6 +35,11 @@ export class HomeComponent implements OnInit {
       `;
       change!.classList.remove('menu-opened'); 
     };
+  };
+
+
+  onSelect(categoria: Categorias){
+    console.log(categoria);
   };
 
 }

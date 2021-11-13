@@ -44,3 +44,37 @@
 .categories{
     color: #396CAD;
 }
+
+.btn-shopping{
+    color:black;
+}
+
+.btn-bag{
+    color:black;
+}
+
+.icon{
+    font-size: 25px;
+}
+
+
+
+
+
+.containter-categorie{
+    border: #7C7C7C 2px solid;
+    border-radius: 12px;
+    padding-bottom: 0;
+    padding-top: 0.75rem;
+}
+
+.name-categorie{
+    color: #91B5E6;
+    font-size: 81%;
+}
+
+.container-img{
+    width: 100%;
+    padding: 0.5rem;
+    max-width: 72%;
+}

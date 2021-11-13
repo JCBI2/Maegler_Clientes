@@ -12,6 +12,8 @@ import { FooterComponent } from './footer/footer.component';
 import { FooterWComponent } from './footer-w/footer-w.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { MenuLComponent } from './menu-l/menu-l.component';
+import { RecordComponent } from './record/record.component';
+import { ShoppingComponent } from './shopping/shopping.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { MenuLComponent } from './menu-l/menu-l.component';
     FooterComponent,
     FooterWComponent,
     CategoriesComponent,
-    MenuLComponent
+    MenuLComponent,
+    RecordComponent,
+    ShoppingComponent
   ],
   imports: [
     BrowserModule,
