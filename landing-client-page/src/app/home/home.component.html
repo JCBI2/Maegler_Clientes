@@ -44,15 +44,15 @@
 </div>
 
 <div class="container-categories">
-  <div class="categories text-2xl font-bold ml-4 text-center">
+  <div id="zona" class="categories text-2xl font-bold ml-4 text-center">
     Categorías
   </div>
 
 
 
   <div>
-    <div class="grid grid-cols-3 p-4">
-      <div class="containter-categorie m-1" *ngFor="let categoria of categorias" (click)="onSelect(categoria)">
+    <div id="showCategories" class="grid grid-cols-3 p-4">
+      <div class="containter-categorie m-1" *ngFor="let categoria of categorias" (click)="onSelectCategory(categoria)">
           <div class="m-auto container-img">
               <img src="{{categoria.icono}}">
           </div>
@@ -61,15 +61,45 @@
     </div>
     
     
-    <div class="hidden">
-        <div>
-    
+    <div id="showBusiness" class="hidden pl-4 pr-4 mt-4">
+        <div class="card-business grid grid-cols-3 mb-8" *ngFor="let empresa of empresas" (click)="onSelectBusiness(empresa)">
+          <div>
+            <img class="banner-business" src="{{empresa.banner}}">
+          </div>
+          <div>
+            <img class="logo-business" src="{{empresa.logo}}">
+          </div>
+          <div>
+            <h3 class="name-business text-center">{{empresa.nombre}}</h3>
+            <p class="p-business description-business">{{empresa.descripcion}}</p>
+            <p class="p-business calification-business">{{empresa.calificacion}}</p>
+          </div>
         </div>
     </div>
     
-    <div class="hidden">
-        <div>
-            
+    <div id="showProducts" class="hidden pl-4 pr-4 mt-4">
+        <div class="card-business grid grid-cols-3 mb-8" *ngFor="let producto of productos">
+            <div class="img-product p-2">
+              <img src="{{producto.imagen}}">
+            </div>
+            <div class="information-product">
+              <h3 class="name-product text-center">{{producto.nombre}}</h3>
+              <p class="description-product">{{producto.descripcion}}</p>
+            </div>
+            <div>
+              <p class="cantidad-product text-center mt-2">¿Cuánto desea?</p>
+              <div class="grid grid-cols-2 icons-minus-plus">
+                <button type="button">
+                  <i class="icon-product fas fa-minus"></i>
+                </button>
+                <button type="button">
+                  <i class="icon-product fas fa-plus"></i>
+                </button>
+              </div>
+              <div class="units">
+                <p>0</p> <p class="ml-1">Unidades</p>
+              </div>
+            </div>
         </div>
     </div>
   </div>

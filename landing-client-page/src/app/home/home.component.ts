@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {CATEGORIAS, Categorias, EMPRESAS, Empresas} from '../Listado-Business';
+import {CATEGORIAS, Categorias, EMPRESAS, Empresas, PRODUCTOS, Productos} from '../Listado-Business';
 
 @Component({
   selector: 'app-home',
@@ -11,6 +11,8 @@ export class HomeComponent implements OnInit {
   categorias = CATEGORIAS;
 
   empresas = EMPRESAS;
+
+  productos = PRODUCTOS;
 
   ngOnInit(): void {
   }
@@ -38,8 +40,23 @@ export class HomeComponent implements OnInit {
   };
 
 
-  onSelect(categoria: Categorias){
-    console.log(categoria);
+  onSelectCategory(categoria: Categorias){
+    const category = document.getElementById("showCategories");
+    const business = document.getElementById("showBusiness");
+    const zona = document.getElementById("zona");
+    category!.classList.add('hidden');
+    business!.classList.remove('hidden');
+    zona!.innerHTML = `${categoria.nombre}`;
   };
+
+  onSelectBusiness(empresa: Empresas){
+    const business = document.getElementById("showBusiness");
+    const product = document.getElementById("showProducts");
+    const zona = document.getElementById("zona");
+    business!.classList.add('hidden');
+    product!.classList.remove('hidden');
+    zona!.innerHTML = `${empresa.nombre}`;
+
+  }
 
 }

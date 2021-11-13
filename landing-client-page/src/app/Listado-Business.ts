@@ -26,9 +26,31 @@ export interface Empresas{
 }
 
 export const EMPRESAS: Empresas[] = [
-    {nombre: "Producto", 
+    {nombre: "Empresa", 
     descripcion: "lorem ipsus", 
     calificacion: 100, 
-    logo: "./assets/Categories/Restaurantes/Burger King/logo.jpg", 
+    logo: "./assets/Categories/Restaurantes/Burger King/Logo.jpg", 
+    banner: "./assets/Categories/Restaurantes/Burger King/Banner.jpg"},
+    {nombre: "Empresa", 
+    descripcion: "lorem ipsus", 
+    calificacion: 100, 
+    logo: "./assets/Categories/Restaurantes/Burger King/Logo.jpg", 
+    banner: "./assets/Categories/Restaurantes/Burger King/Banner.jpg"},
+    {nombre: "Empresa", 
+    descripcion: "lorem ipsus", 
+    calificacion: 100, 
+    logo: "./assets/Categories/Restaurantes/Burger King/Logo.jpg", 
     banner: "./assets/Categories/Restaurantes/Burger King/Banner.jpg"}
 ];
+
+export interface Productos{
+    nombre: String;
+    descripcion: String;
+    imagen: String;
+}
+
+export const PRODUCTOS: Productos[] = [
+    {nombre: "Producto", descripcion: "lorem ipsus", imagen: "./assets/Categories/Restaurantes/Burger King/Bacon King.png"},
+    {nombre: "Producto", descripcion: "lorem ipsus", imagen: "./assets/Categories/Restaurantes/Burger King/Bacon King.png"},
+    {nombre: "Producto", descripcion: "lorem ipsus", imagen: "./assets/Categories/Restaurantes/Burger King/Bacon King.png"}
+]

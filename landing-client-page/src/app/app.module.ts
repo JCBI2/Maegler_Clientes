@@ -10,7 +10,6 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { FooterWComponent } from './footer-w/footer-w.component';
-import { CategoriesComponent } from './categories/categories.component';
 import { MenuLComponent } from './menu-l/menu-l.component';
 import { RecordComponent } from './record/record.component';
 import { ShoppingComponent } from './shopping/shopping.component';
@@ -25,7 +24,6 @@ import { ShoppingComponent } from './shopping/shopping.component';
     MenuComponent,
     FooterComponent,
     FooterWComponent,
-    CategoriesComponent,
     MenuLComponent,
     RecordComponent,
     ShoppingComponent
