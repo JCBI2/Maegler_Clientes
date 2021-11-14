@@ -73,3 +73,29 @@ export const RESUMEN: Resumen[] = [
     precio: 326,
     cantidad: 1}
 ]
+
+export interface Record{
+    id: number;
+    logo: String;
+    categoria: String;
+    empresa: String;
+    total: number;
+    fecha: String;
+}
+
+export const RECORD: Record[] = [
+    {
+        id: 1,
+        logo: "./assets/Categories/Restaurantes/Burger King/Logo.jpg",
+        categoria: "Restaurantes",
+        empresa: "Burger King",
+        total: 396,
+        fecha: "29/09/2021"},
+    {
+        id: 2,
+        logo: "./assets/Categories/Restaurantes/Burger King/Logo.jpg",
+        categoria: "Restaurantes",
+        empresa: "Burger King",
+        total: 396,
+        fecha: "29/09/2021"}
+]

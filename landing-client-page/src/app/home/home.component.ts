@@ -44,8 +44,10 @@ export class HomeComponent implements OnInit {
     const category = document.getElementById("showCategories");
     const business = document.getElementById("showBusiness");
     const zona = document.getElementById("zona");
+    const welcome = document.getElementById("welcome");
     category!.classList.add('hidden');
     business!.classList.remove('hidden');
+    welcome!.classList.add('hidden');
     zona!.innerHTML = `${categoria.nombre}`;
   };
 

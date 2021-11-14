@@ -1,1 +1,86 @@
-<p>record works!</p>
+<nav id="nav" class="nb bg-gray-800 fixed w-full pt-2">
+    <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
+      <div class="relative flex items-center justify-between h-16">
+        <div class="logo-favicon">
+          <img class="block lg:hidden h-8 w-auto" src="./assets/Favicon.png">
+        </div>
+        <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+        <div>
+            <button type="button" class="inline-flex btn-shopping items-center justify-center p-2 rounded-md" routerLink="/home/shopping" routerLinkActive="active">
+                <i class="icon fas fa-shopping-cart"></i>
+            </button>
+            <button type="button" class="btn-record-icon inline-flex items-center justify-center p-2 rounded-md">
+                <i class="icon fas fa-shopping-bag"></i>
+            </button>    
+        </div>
+          <div class="ml-3 relative">
+            <div>
+                <button id="btnmenu" (click)="menu()" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400">
+                <svg class="main-menu block h-9 w-9" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</nav>
+
+<div class="menu-opened" id="menuOpened">
+    <app-menu-l></app-menu-l>
+</div>
+
+<div>
+    <div id="foo" class="grid grid-cols-2 pt-28 mb-8 foo">
+        <button id="btn-activas" class="btn-record font-semibold" type="button" (click)="Active()">ACTIVAS</button>
+        <button id="btn-historial" class="btn-record font-semibold" type="button" (click)="Historial()">HISTORIAL</button>
+    </div>
+
+    <div id="activas" class="hidden mb-60">
+        <div *ngFor = "let rec of record">
+            <div class="grid grid-cols-2 card-record mb-8">
+                <img class="img-record" src="{{rec.logo}}">
+                <div>
+                    <div class="grid grid-cols-2">
+                        <p class="order-number">Orden #{{rec.id}}</p>
+                        <p class="fecha-record">{{rec.fecha}}</p>
+                    </div>
+                    <div class="information">
+                        {{rec.categoria}} - {{rec.empresa}}
+                    </div>
+                    <hr class="separador"/>
+                    <div class="total">
+                        Total: L {{rec.total}}.00
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="historial" class="hidden mb-60">
+        <div *ngFor = "let rec of record">
+            <div class="grid grid-cols-2 card-record mb-8">
+                <img class="img-record" src="{{rec.logo}}">
+                <div>
+                    <div class="grid grid-cols-2">
+                        <p class="order-number">Orden #{{rec.id}}</p>
+                        <p class="fecha-record">{{rec.fecha}}</p>
+                    </div>
+                    <div class="information">
+                        {{rec.categoria}} - {{rec.empresa}}
+                    </div>
+                    <hr class="separador"/>
+                    <div class="total">
+                        Total: L {{rec.total}}.00
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <app-footer></app-footer>
+
+</div>

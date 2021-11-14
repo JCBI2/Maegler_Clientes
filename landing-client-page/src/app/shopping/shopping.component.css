@@ -50,6 +50,7 @@
     padding-left: 1rem;
     padding-right: 1rem;
     margin-left: 25%;
+    border-radius: 8px;
 }
 
 .btn-cancel{
@@ -102,4 +103,48 @@
 
 .summary-price{
     border-top: #B2B2B2 2px solid;
+}
+
+.separation{
+    background-color: #D4D4D4;
+}
+
+
+.finalize{
+    margin-top: -22%;
+}
+
+.charge{
+    color: #4A4A4A;
+    font-size: small;
+}
+
+.chargeC{
+    color: #4A4A4A;
+    margin-left: 55%;
+    font-size: small;
+}
+
+.map{
+    border: #B2B2B2 2px solid;
+    border-radius: 12px;
+}
+
+.btn-finalize{
+    background-color: #E06D60;
+    color: #fff;
+    padding: 0.25rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    margin-left: 22%;
+    border-radius: 8px;
+}
+
+.ready{
+    margin-top: -22%;
+}
+
+.name-finalize{
+    color: #203C61;
+    font-weight: 600;
 }

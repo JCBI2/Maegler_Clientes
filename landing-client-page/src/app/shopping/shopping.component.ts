@@ -35,4 +35,28 @@ export class ShoppingComponent implements OnInit {
     };
   };
 
+  backSummaryProducts(){
+    const divSummaryProducts = document.getElementById("summaryProducts");
+    const nav = document.getElementById("nav");
+    const finalize = document.getElementById("finalize");
+    divSummaryProducts!.classList.remove('hidden');
+    nav!.classList.remove('hidden');
+    finalize!.classList.add('hidden');
+  }
+
+  processing(){
+    const divSummaryProducts = document.getElementById("summaryProducts");
+    const nav = document.getElementById("nav");
+    const finalize = document.getElementById("finalize");
+    divSummaryProducts!.classList.add('hidden');
+    nav!.classList.add('hidden');
+    finalize!.classList.remove('hidden');
+  }
+
+  finalize(){
+    const ready = document.getElementById("ready");
+    const finalize = document.getElementById("finalize");
+    ready!.classList.remove('hidden');
+    finalize!.classList.add('hidden')
+  }
 }

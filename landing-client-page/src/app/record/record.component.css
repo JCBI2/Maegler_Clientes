@@ -1,0 +1,80 @@
+.nb{
+    background-color: #F9F9F9;
+}
+
+.menu-opened{
+    display: none;
+}
+
+.logo-favicon{
+    padding-left: 15px;
+}
+
+.main-menu{
+    color: #E06D60;
+}
+
+.btn-record-icon{
+    color: #4A8CE1;
+}
+
+.btn-shopping{
+    color:black;
+}
+
+.icon{
+    font-size: 25px;
+}
+
+.btn-record{
+    color: #203C61;
+    font-size: larger;
+}
+
+.foo{
+    margin-bottom: 31rem;
+}
+
+.selected{
+    color: #4A8CE1;
+    border-bottom: #4A8CE1 2px solid;
+}
+
+.card-record{
+    border-top: #B2B2B2 1px solid;
+    border-bottom: #B2B2B2 1px solid;
+}
+
+.img-record{
+    border-right: #B2B2B2 2px solid;
+    max-width: 86%;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.order-number{
+    color: #203C61;
+}
+
+.information{
+    color: #4A4A4A;
+    font-size: small;
+    margin-bottom: 2rem;
+}
+
+.total{
+    color: #4A4A4A;
+    font-size: small;
+}
+
+.separador{
+    background-color: #B2B2B2;
+    size: 2px;
+    margin-left: -1.7rem;
+    margin-bottom: 0.5rem;
+}
+
+.fecha-record{
+    color: #4A4A4A;
+    font-size: small;
+}
