@@ -13,6 +13,8 @@ import { FooterWComponent } from './footer-w/footer-w.component';
 import { MenuLComponent } from './menu-l/menu-l.component';
 import { RecordComponent } from './record/record.component';
 import { ShoppingComponent } from './shopping/shopping.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { ShoppingComponent } from './shopping/shopping.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

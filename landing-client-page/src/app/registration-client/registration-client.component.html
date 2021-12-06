@@ -30,23 +30,23 @@
         Registrate
       </div>
 
-      <form class="w-full max-w-sm form-registration mt-60">
+      <form [formGroup]="formRegistration" class="w-full max-w-sm form-registration mt-60">
         <div class="text-center">
           Nombre Completo
         </div>
-        <input class="pt-1.5 pb-1.5 rounded-lg pl-16 pr-16 mt-1.5 mb-1.5" type="text">
+        <input formControlName="Nombre" class="pt-1.5 pb-1.5 rounded-lg pl-16 pr-16 mt-1.5 mb-1.5" type="text">
         <div class="text-center">
           Correo Electrónico
         </div>
-        <input class="pt-1.5 pb-1.5 rounded-lg pl-16 pr-16 mt-1.5 mb-1.5" type="text">
+        <input formControlName="email" class="pt-1.5 pb-1.5 rounded-lg pl-16 pr-16 mt-1.5 mb-1.5" type="text">
         <div class="text-center">
           Contraseña
         </div>
-        <input class="pt-1.5 pb-1.5 rounded-lg pl-16 pr-16 mt-1.5 mb-1.5" type="password">
+        <input formControlName="password" class="pt-1.5 pb-1.5 rounded-lg pl-16 pr-16 mt-1.5 mb-1.5" type="password">
         <div class="text-center">
           Confirmar Contraseña
         </div>
-        <input class="pt-1.5 pb-1.5 rounded-lg pl-16 pr-16 mt-1.5 mb-1.5" type="password">
+        <input formControlName="ConfirmPassword" class="pt-1.5 pb-1.5 rounded-lg pl-16 pr-16 mt-1.5 mb-1.5" type="password">
         <button class="form-accept mt-1.5 mb-1.5 font-bold pt-1.5 pb-1.5 rounded-lg" type="button">
           ACEPTAR
         </button>
