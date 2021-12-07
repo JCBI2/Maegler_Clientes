@@ -1,0 +1,41 @@
+.arrow{
+    color: #1F3E5B
+}
+  
+.gray{
+    color: #DADAD8
+}
+
+.color-blue{
+    color: #4A8CE1;
+}
+  
+.color-gray{
+    color: #DADAD8;
+}
+  
+.input-button{
+    padding: 0 4px;
+    border-bottom: 1px solid #203C61;
+}
+
+.bg-blue{
+    background-color: #4A8CE1;
+    color: #f7f7f7;
+}
+
+.bg-red{
+    background-color: #E06D60;
+    color: #f7f7f7;
+}
+
+input{
+    background: transparent;
+    border-bottom: 1px solid #1E61B9;
+    width: 100%;
+    color: #203C61;
+}
+
+label{
+    color: #DADAD8;
+}

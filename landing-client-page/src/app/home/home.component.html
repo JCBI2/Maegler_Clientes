@@ -2,7 +2,9 @@
     <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
       <div class="relative flex items-center justify-between h-16">
         <div class="logo-favicon">
-          <img class="block lg:hidden h-8 w-auto" src="./assets/Favicon.png">
+          <button type="button" routerLink="/home" routerLinkActive="active">
+            <img class="block lg:hidden h-8 w-auto" src="./assets/Favicon.png">
+          </button>
         </div>
         <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
         <div>
@@ -49,7 +51,12 @@
   <div id="zona" class="categories text-2xl font-bold ml-4 text-center">
     Categorías
   </div>
-
+  <div *ngIf="arrow1" (click)="arrowCategory()" class="arrow ml-6">
+    <i class="fas fa-arrow-left fa-2x"></i>
+  </div>
+  <div *ngIf="arrow2" (click)="arrowBusiness()" class="arrow ml-6">
+    <i class="fas fa-arrow-left fa-2x"></i>
+  </div>
 
 
   <div>
@@ -64,6 +71,7 @@
     
     
     <div id="showBusiness" class="hidden pl-4 pr-4 mt-4">
+        
         <div class="card-business grid grid-cols-3 mb-8" *ngFor="let empresa of empresas" (click)="onSelectBusiness(empresa)">
           <div>
             <img class="banner-business" src="{{empresa.banner}}">

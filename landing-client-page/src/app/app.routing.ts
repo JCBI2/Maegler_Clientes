@@ -6,6 +6,7 @@ import { RegistrationClientComponent } from './registration-client/registration-
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { RecordComponent } from './record/record.component';
 import { ShoppingComponent } from './shopping/shopping.component';
+import { PerfilComponent } from './perfil/perfil.component';
 
 const routes: Routes = [
     { path: 'home', component: HomeComponent},
@@ -13,6 +14,7 @@ const routes: Routes = [
     { path: 'registration', component: RegistrationClientComponent},
     { path: 'home/record', component: RecordComponent},
     { path: 'home/shopping', component: ShoppingComponent},
+    { path: 'home/profile', component: PerfilComponent},
     { path: '', component: LandingPageComponent}
   ];
 

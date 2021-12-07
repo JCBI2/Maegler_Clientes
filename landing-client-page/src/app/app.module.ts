@@ -15,6 +15,7 @@ import { RecordComponent } from './record/record.component';
 import { ShoppingComponent } from './shopping/shopping.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { PerfilComponent } from './perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { HttpClientModule } from '@angular/common/http';
     FooterWComponent,
     MenuLComponent,
     RecordComponent,
-    ShoppingComponent
+    ShoppingComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,

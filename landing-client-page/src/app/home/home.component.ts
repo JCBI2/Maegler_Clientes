@@ -14,6 +14,10 @@ export class HomeComponent implements OnInit {
 
   productos = PRODUCTOS;
 
+  arrow1 = false;
+
+  arrow2 = false;
+
   ngOnInit(): void {
   }
 
@@ -39,6 +43,28 @@ export class HomeComponent implements OnInit {
     };
   };
 
+  arrowCategory(){
+    const category = document.getElementById("showCategories");
+    const business = document.getElementById("showBusiness");
+    const zona = document.getElementById("zona");
+    const welcome = document.getElementById("welcome");
+    category!.classList.remove('hidden');
+    business!.classList.add('hidden');
+    welcome!.classList.remove('hidden');
+    this.arrow1 = false;
+    zona!.innerHTML = `Categorías`;
+  }
+
+  arrowBusiness(){
+    const business = document.getElementById("showBusiness");
+    const product = document.getElementById("showProducts");
+    const zona = document.getElementById("zona");
+    business!.classList.remove('hidden');
+    product!.classList.add('hidden');
+    this.arrow1 = true;
+    this.arrow2 = false;
+    zona!.innerHTML = `categoría`;
+  }
 
   onSelectCategory(categoria: Categorias){
     const category = document.getElementById("showCategories");
@@ -48,6 +74,7 @@ export class HomeComponent implements OnInit {
     category!.classList.add('hidden');
     business!.classList.remove('hidden');
     welcome!.classList.add('hidden');
+    this.arrow1 = true;
     zona!.innerHTML = `${categoria.nombre}`;
   };
 
@@ -57,8 +84,9 @@ export class HomeComponent implements OnInit {
     const zona = document.getElementById("zona");
     business!.classList.add('hidden');
     product!.classList.remove('hidden');
+    this.arrow1 = false;
+    this.arrow2 = true;
     zona!.innerHTML = `${empresa.nombre}`;
-
   }
 
 }

@@ -1,0 +1,75 @@
+import { Component, OnInit } from '@angular/core';
+import { Location } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
+
+@Component({
+  selector: 'app-perfil',
+  templateUrl: './perfil.component.html',
+  styleUrls: ['./perfil.component.css']
+})
+export class PerfilComponent implements OnInit {
+
+  driver_id = ""
+  passwordShowed = false
+  newPasswordShowed = false
+  repeatNewPasswordShowed = false
+  passwordFormIsActived = false
+
+  constructor(private route: ActivatedRoute, private location: Location) { }
+
+  goBack(){
+    this.location.back();
+  }
+
+  togglePassword(){
+    let passwordInput: any = document.getElementById("contraseña")
+    if(this.passwordShowed){
+      passwordInput.type = "password"
+      this.passwordShowed = !this.passwordShowed
+    }else{
+      passwordInput.type = "text"
+      this.passwordShowed = !this.passwordShowed
+    }
+  }
+
+  toggleNewPassword(){
+    let passwordInput: any = document.getElementById("nueva_contraseña")
+    if(this.newPasswordShowed){
+      passwordInput.type = "password"
+      this.newPasswordShowed = !this.newPasswordShowed
+    }else{
+      passwordInput.type = "text"
+      this.newPasswordShowed = !this.newPasswordShowed
+    }
+  }
+
+  toggleRepeatNewPassword(){
+    let passwordInput: any = document.getElementById("repeticion_nueva_contraseña")
+    if(this.repeatNewPasswordShowed){
+      passwordInput.type = "password"
+      this.repeatNewPasswordShowed = !this.repeatNewPasswordShowed
+    }else{
+      passwordInput.type = "text"
+      this.repeatNewPasswordShowed = !this.repeatNewPasswordShowed
+    }
+  }
+
+  showChangePasswordForm(){
+    let editButton: any = document.getElementById("change-password")
+    editButton.disabled = true
+    this.passwordFormIsActived = true;
+  }
+
+  closePasswordForm(){
+    let editButton: any = document.getElementById("change-password")
+    editButton.disabled = false
+    this.passwordFormIsActived = false;
+
+  }
+
+  ngOnInit(): void {
+    this.driver_id = this.route.snapshot.paramMap.get("id") || ""
+    console.log(this.driver_id)
+  }
+
+}
