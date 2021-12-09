@@ -12,7 +12,7 @@ export class RegistrationClientComponent implements OnInit {
 
   formRegistration = new FormGroup({
     Nombre: new FormControl('', [Validators.required]),
-    email: new FormControl('', [Validators.required]),
+    email: new FormControl('', Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$')])),
     password: new FormControl('', [Validators.required]),
     ConfirmPassword: new FormControl('', [Validators.required])
   });
@@ -39,6 +39,35 @@ export class RegistrationClientComponent implements OnInit {
       change!.classList.remove('menu-opened'); 
     };
   };
+
+  Accept(){
+    if(this.formRegistration.controls.email.valid == false){
+      alert("Correo invalido");
+    }else{
+      if(this.formRegistration.valid){
+        if(this.formRegistration.controls.password.value == this.formRegistration.controls.ConfirmPassword.value){
+
+
+
+
+          
+          console.log("Entre");
+
+
+
+
+
+
+        }else{
+          alert("Las contraseñas deben coincidir");
+        }
+      }else{
+        alert("Faltan campos para llenar.")
+      }
+    }
+
+    console.log(this.formRegistration.controls.Nombre.value)
+  }
   
   ngOnInit(): void {
   }

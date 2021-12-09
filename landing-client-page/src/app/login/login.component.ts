@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators} from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,11 +9,11 @@ import { FormControl, FormGroup, Validators} from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private route: Router) { }
 
 
   formIngreso = new FormGroup({
-    email: new FormControl('', [Validators.required]),
+    email: new FormControl('', Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$')])),
     password: new FormControl('', [Validators.required])
   });
 
@@ -39,6 +40,26 @@ export class LoginComponent implements OnInit {
       change!.classList.remove('menu-opened'); 
     };
   };
+
+  login(){
+    if(this.formIngreso.controls.email.valid == false){
+      alert("Correo invalido");
+    }else{
+      if(this.formIngreso.valid){
+        
+
+
+        
+        this.route.navigate(['home']);
+
+
+
+
+      }else{
+        alert("Faltan campos para llenar");
+      }
+    }
+  }
   
   ngOnInit(): void {
   }
