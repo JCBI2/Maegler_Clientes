@@ -16,6 +16,7 @@ import { ShoppingComponent } from './shopping/shopping.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { PerfilComponent } from './perfil/perfil.component';
+import { MapComponent } from './map/map.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { PerfilComponent } from './perfil/perfil.component';
     MenuLComponent,
     RecordComponent,
     ShoppingComponent,
-    PerfilComponent
+    PerfilComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
