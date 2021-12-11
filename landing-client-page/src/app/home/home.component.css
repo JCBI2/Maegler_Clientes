@@ -139,6 +139,13 @@
     font-size: small;
 }
 
+.description-price{
+    color: #7C7C7C;
+    margin-left: 60%;
+    margin-top: 7%;
+    font-size: x-small;
+}
+
 .cantidad-product{
     color: #7C7C7C;
     font-size: smaller;

@@ -61,9 +61,9 @@
 
   <div>
     <div id="showCategories" class="grid grid-cols-3 p-4">
-      <div class="containter-categorie m-1" *ngFor="let categoria of categorias" (click)="onSelectCategory(categoria)">
+      <div class="containter-categorie m-1" *ngFor="let categoria of categorys" (click)="onSelectCategory(categoria)">
           <div class="m-auto container-img">
-              <img src="{{categoria.icono}}">
+              <img src="http://localhost:3000/{{categoria.imagen}}">
           </div>
           <p class="text-center font-bold name-categorie mb-1">{{categoria.nombre}}</p>
       </div>
@@ -72,42 +72,43 @@
     
     <div id="showBusiness" class="hidden pl-4 pr-4 mt-4">
         
-        <div class="card-business grid grid-cols-3 mb-8" *ngFor="let empresa of empresas" (click)="onSelectBusiness(empresa)">
+        <div class="card-business grid grid-cols-3 mb-8" *ngFor="let empresa of business" (click)="onSelectBusiness(empresa)">
           <div>
-            <img class="banner-business" src="{{empresa.banner}}">
+            <img class="banner-business" src="http://localhost:3000/{{empresa.banner}}">
           </div>
           <div>
-            <img class="logo-business" src="{{empresa.logo}}">
+            <img class="logo-business" src="http://localhost:3000/{{empresa.logo}}">
           </div>
           <div>
             <h3 class="name-business text-center">{{empresa.nombre}}</h3>
-            <p class="p-business description-business">{{empresa.descripcion}}</p>
-            <p class="p-business calification-business">{{empresa.calificacion}}</p>
+            <p class="p-business description-business">{{empresa.informacion}}</p>
+            <p class="p-business calification-business">{{empresa.suma_calificaciones/empresa.numero_calificaciones}}</p>
           </div>
         </div>
     </div>
     
     <div id="showProducts" class="hidden pl-4 pr-4 mt-4">
-        <div class="card-business grid grid-cols-3 mb-8" *ngFor="let producto of productos">
+        <div class="card-business grid grid-cols-3 mb-8" *ngFor="let producto of products">
             <div class="img-product p-2">
-              <img src="{{producto.imagen}}">
+              <img src="http://localhost:3000/{{producto.imagen}}">
             </div>
             <div class="information-product">
               <h3 class="name-product text-center">{{producto.nombre}}</h3>
-              <p class="description-product">{{producto.descripcion}}</p>
+              <p class="description-product">{{producto.informacion}}</p>
+              <p class="description-price"> {{producto.precio}} L</p>
             </div>
             <div>
               <p class="cantidad-product text-center mt-2">¿Cuánto desea?</p>
               <div class="grid grid-cols-2 icons-minus-plus">
-                <button type="button">
+                <button (click)="less(producto.id)"type="button">
                   <i class="icon-product fas fa-minus"></i>
                 </button>
-                <button type="button">
+                <button (click)="more(producto.id, producto)" type="button">
                   <i class="icon-product fas fa-plus"></i>
                 </button>
               </div>
               <div class="units">
-                <p>0</p> <p class="ml-1">Unidades</p>
+                <p id="product{{producto.id}}">0</p> <p class="ml-1">Unidades</p>
               </div>
             </div>
         </div>

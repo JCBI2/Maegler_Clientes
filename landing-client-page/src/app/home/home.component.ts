@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {CATEGORIAS, Categorias, EMPRESAS, Empresas, PRODUCTOS, Productos} from '../Listado-Business';
+import { CategoriasService } from '../categorias.service';
 
 @Component({
   selector: 'app-home',
@@ -8,18 +8,37 @@ import {CATEGORIAS, Categorias, EMPRESAS, Empresas, PRODUCTOS, Productos} from '
 })
 export class HomeComponent implements OnInit {
 
-  categorias = CATEGORIAS;
+  constructor(private categoriasService: CategoriasService){}
 
-  empresas = EMPRESAS;
+  categorys: any = [];
+  actualCategory = "";
 
-  productos = PRODUCTOS;
+  business: any = [];
+
+  products: any = [];
+
+
+  productsShopping: any=[];
+
 
   arrow1 = false;
 
   arrow2 = false;
 
   ngOnInit(): void {
+    this.generarCategorias();
   }
+
+  generarCategorias(){
+    this.categoriasService.obtenerCategorias().subscribe(res=>{
+      console.log(res);
+      for(let i = 0; i < res.length; i++){
+        this.categorys.push(res[i]);
+      }
+    },
+    error=>console.log(error))
+  }
+
 
   menu(){
     const element = document.getElementById("btnmenu");
@@ -43,6 +62,7 @@ export class HomeComponent implements OnInit {
     };
   };
 
+
   arrowCategory(){
     const category = document.getElementById("showCategories");
     const business = document.getElementById("showBusiness");
@@ -53,6 +73,7 @@ export class HomeComponent implements OnInit {
     welcome!.classList.remove('hidden');
     this.arrow1 = false;
     zona!.innerHTML = `Categorías`;
+    this.business = [];
   }
 
   arrowBusiness(){
@@ -63,10 +84,11 @@ export class HomeComponent implements OnInit {
     product!.classList.add('hidden');
     this.arrow1 = true;
     this.arrow2 = false;
-    zona!.innerHTML = `categoría`;
+    zona!.innerHTML = `${this.actualCategory}`;
+    this.products = [];
   }
 
-  onSelectCategory(categoria: Categorias){
+  onSelectCategory(categoria:any){
     const category = document.getElementById("showCategories");
     const business = document.getElementById("showBusiness");
     const zona = document.getElementById("zona");
@@ -76,9 +98,13 @@ export class HomeComponent implements OnInit {
     welcome!.classList.add('hidden');
     this.arrow1 = true;
     zona!.innerHTML = `${categoria.nombre}`;
+    this.actualCategory = categoria.nombre;
+    for(let i = 0; i < categoria.empresas.length; i++){
+      this.business.push(categoria.empresas[i]);
+    }
   };
 
-  onSelectBusiness(empresa: Empresas){
+  onSelectBusiness(empresa:any){
     const business = document.getElementById("showBusiness");
     const product = document.getElementById("showProducts");
     const zona = document.getElementById("zona");
@@ -87,6 +113,38 @@ export class HomeComponent implements OnInit {
     this.arrow1 = false;
     this.arrow2 = true;
     zona!.innerHTML = `${empresa.nombre}`;
+    for(let i = 0; i < empresa.productos.length; i++){
+      this.products.push(empresa.productos[i]);
+    }
+  }
+
+
+  less(id:any){
+    var temp = 0;
+    const units = document.getElementById(`product${id}`);
+    temp = Number(units?.textContent);
+    if(temp != 0){
+      temp --
+      units!.innerHTML = `${temp}`;
+    }
+  }
+
+  more(id:any, prod:any){
+    var temp = 0;
+    const units = document.getElementById(`product${id}`);
+    temp = Number(units?.textContent);
+    temp ++
+    units!.innerHTML = `${temp}`;
+
+    console.log(prod);
+
+    if(this.productsShopping.length != 0){
+      this.productsShopping.push(prod);
+      console.log(this.productsShopping)
+    }else{
+
+      this.productsShopping.push(prod);
+    }
   }
 
 }
