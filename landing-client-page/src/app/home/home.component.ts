@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CategoriasService } from '../categorias.service';
+import { UsuariosService } from '../usuarios.service';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +9,7 @@ import { CategoriasService } from '../categorias.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private categoriasService: CategoriasService){}
+  constructor(private categoriasService: CategoriasService, private usuarioService: UsuariosService){}
 
   categorys: any = [];
   actualCategory = "";
@@ -17,8 +18,13 @@ export class HomeComponent implements OnInit {
 
   products: any = [];
 
+  Usuario = "";
+
 
   productsShopping: any=[];
+  informationBusiness: any = [];
+
+
 
 
   arrow1 = false;
@@ -27,6 +33,16 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.generarCategorias();
+    localStorage.setItem("productsShoping", this.productsShopping);
+    localStorage.setItem("informationBusiness", this.informationBusiness);
+    this.obtenerInfo();
+  }
+
+  obtenerInfo(){
+    this.usuarioService.datos().subscribe((res:any)=>{
+      console.log(res);
+      this.Usuario = res.nombre_completo
+    })
   }
 
   generarCategorias(){
@@ -80,12 +96,16 @@ export class HomeComponent implements OnInit {
     const business = document.getElementById("showBusiness");
     const product = document.getElementById("showProducts");
     const zona = document.getElementById("zona");
+    const red = document.getElementById("shopping");
     business!.classList.remove('hidden');
     product!.classList.add('hidden');
     this.arrow1 = true;
     this.arrow2 = false;
     zona!.innerHTML = `${this.actualCategory}`;
+    red!.classList.remove('true');
+    this.productsShopping = [];
     this.products = [];
+    this.informationBusiness = [];
   }
 
   onSelectCategory(categoria:any){
@@ -116,35 +136,76 @@ export class HomeComponent implements OnInit {
     for(let i = 0; i < empresa.productos.length; i++){
       this.products.push(empresa.productos[i]);
     }
+    let json = {nombre: `${empresa.nombre}`, logo: `${empresa.logo}`}
+    this.informationBusiness.push(json)
+    this.productsShopping = []
+    localStorage.setItem("productsShoping", this.productsShopping);
+    localStorage.setItem("informationBusiness", JSON.stringify(this.informationBusiness));
   }
 
 
   less(id:any){
     var temp = 0;
+    var limbo = 0;
     const units = document.getElementById(`product${id}`);
+    const red = document.getElementById("shopping");
     temp = Number(units?.textContent);
     if(temp != 0){
       temp --
       units!.innerHTML = `${temp}`;
+      for(let i = 0; i < this.productsShopping.length; i++){
+        if(this.productsShopping[i].id == id){
+          limbo = this.productsShopping[i].cantidad;
+          limbo --;
+          this.productsShopping[i].cantidad = limbo;
+          localStorage.setItem("productsShoping", JSON.stringify(this.productsShopping));
+          if(limbo == 0){
+            this.productsShopping.splice(i, 1);
+            localStorage.setItem("productsShoping", JSON.stringify(this.productsShopping));
+          }
+        }
+      }
     }
+    if(this.productsShopping.length == 0){
+      red!.classList.remove('true');
+      localStorage.setItem("productsShoping", JSON.stringify(this.productsShopping));
+    }
+    
   }
 
   more(id:any, prod:any){
     var temp = 0;
+    var limbo = 0;
+    var bandera = true;
     const units = document.getElementById(`product${id}`);
+    const red = document.getElementById("shopping");
     temp = Number(units?.textContent);
     temp ++
     units!.innerHTML = `${temp}`;
 
-    console.log(prod);
-
     if(this.productsShopping.length != 0){
-      this.productsShopping.push(prod);
-      console.log(this.productsShopping)
+      for(let i = 0; i < this.productsShopping.length; i++){
+        if(this.productsShopping[i].id == id){
+          limbo = this.productsShopping[i].cantidad;
+          limbo ++;
+          this.productsShopping[i].cantidad = limbo;
+          bandera = false;
+          localStorage.setItem("productsShoping", JSON.stringify(this.productsShopping));
+        }
+        if(i == this.productsShopping.length - 1 && bandera){
+          let data = {"id": id, "nombre": prod.nombre, "imagen": prod.imagen, "precio": prod.precio, "cantidad": 0}
+          this.productsShopping.push(data);
+          localStorage.setItem("productsShoping", JSON.stringify(this.productsShopping));
+        }
+      }
     }else{
-
-      this.productsShopping.push(prod);
+      let json = {"id": id, "nombre": prod.nombre, "imagen": prod.imagen, "precio": prod.precio, "cantidad": 1}
+      this.productsShopping.push(json);
+      localStorage.setItem("productsShoping", JSON.stringify(this.productsShopping));
+      red!.classList.add('true');
     }
+
+    
   }
 
 }

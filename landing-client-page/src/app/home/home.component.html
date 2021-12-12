@@ -9,7 +9,7 @@
         <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
         <div>
             <button type="button" class="btn-shopping inline-flex items-center justify-center p-2 rounded-md" routerLink="/home/shopping" routerLinkActive="active">
-                <i class="icon fas fa-shopping-cart"></i>
+                <i id="shopping" class="icon fas fa-shopping-cart"></i>
             </button>
             <button type="button" class="btn-bag inline-flex items-center justify-center p-2 rounded-md" routerLink="/home/record" routerLinkActive="active">
                 <i class="icon fas fa-shopping-bag"></i>
@@ -41,7 +41,7 @@
   </div>
   <div id="welcome">
     <div class="text-center font-bold pt-12 welcome">
-      ¡Bienvenido Cliente!
+      ¡Bienvenido(a) {{Usuario}}!
     </div>
     <input class="ip-search mt-4 p-1.5 pl-16 pr-20 ml-4 mb-12" type="text" placeholder="¿Qué es lo que buscas hoy?">
   </div>
@@ -82,7 +82,7 @@
           <div>
             <h3 class="name-business text-center">{{empresa.nombre}}</h3>
             <p class="p-business description-business">{{empresa.informacion}}</p>
-            <p class="p-business calification-business">{{empresa.suma_calificaciones/empresa.numero_calificaciones}}</p>
+            <p class="p-business calification-business">{{empresa.suma_calificaciones/empresa.numero_calificaciones | number:"2.1"}}</p>
           </div>
         </div>
     </div>

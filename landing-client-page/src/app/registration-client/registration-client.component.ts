@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { OrdenesService } from '../ordenes.service';
 
 @Component({
   selector: 'app-registration-client',
@@ -8,7 +9,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class RegistrationClientComponent implements OnInit {
 
-  constructor() { }
+  constructor(private ordenesService: OrdenesService) { }
 
   formRegistration = new FormGroup({
     Nombre: new FormControl('', [Validators.required]),
@@ -48,16 +49,18 @@ export class RegistrationClientComponent implements OnInit {
         if(this.formRegistration.controls.password.value == this.formRegistration.controls.ConfirmPassword.value){
 
 
-
+          this.ordenesService.crearUsuario(
+            this.formRegistration.controls.Nombre.value,
+            this.formRegistration.controls.email.value,
+            this.formRegistration.controls.password.value
+          ).subscribe(
+            res=>{
+              console.log(res);
+            },
+            error=>console.log(error)
+          );
 
           
-          console.log("Entre");
-
-
-
-
-
-
         }else{
           alert("Las contraseñas deben coincidir");
         }

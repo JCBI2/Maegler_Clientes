@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
+import { UsuariosService } from '../usuarios.service';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private route: Router) { }
+  constructor(private route: Router, private usuarioService: UsuariosService) { }
 
 
   formIngreso = new FormGroup({
@@ -48,12 +49,18 @@ export class LoginComponent implements OnInit {
       if(this.formIngreso.valid){
         
 
-
+        this.usuarioService.ingresar(
+          this.formIngreso.controls.email.value,
+          this.formIngreso.controls.password.value
+        ).subscribe(
+          (res:any) =>{
+            console.log(res);
+            localStorage.setItem("token", res.token)
+            this.route.navigate(['home']);
+          },
+          error=>console.log(error)
+        );
         
-        this.route.navigate(['home']);
-
-
-
 
       }else{
         alert("Faltan campos para llenar");
@@ -62,5 +69,6 @@ export class LoginComponent implements OnInit {
   }
   
   ngOnInit(): void {
+    
   }
 }

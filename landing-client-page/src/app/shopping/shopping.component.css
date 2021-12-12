@@ -2,6 +2,11 @@
     background-color: #F9F9F9;
 }
 
+.end{
+    position: fixed;
+    bottom: 0;
+}
+
 .menu-opened{
     display: none;
 }

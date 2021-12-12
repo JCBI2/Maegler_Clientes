@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {RESUMEN, Resumen} from '../Listado-Business';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 
 @Component({
   selector: 'app-shopping',
@@ -8,9 +8,26 @@ import {RESUMEN, Resumen} from '../Listado-Business';
 })
 export class ShoppingComponent implements OnInit {
 
-  resumen = RESUMEN;
+  constructor(){}
+
+  productsShopping: any=[];
+  nombre = "";
+  logo = "";
+  subtotal = 0;
 
   ngOnInit(): void {
+    
+    console.log(localStorage.getItem("informationBusiness"))
+    let hola = JSON.parse(localStorage.getItem("informationBusiness") as any) 
+    this.nombre = hola[0].nombre;
+    this.logo = hola[0].logo;
+    let add = JSON.parse(localStorage.getItem("productsShoping") as any)
+    console.log(add);
+    for(let i = 0; i < add.length; i++){
+      this.subtotal += add[i].precio;
+      this.productsShopping.push(add[i])
+    }
+    console.log(this.subtotal);
   }
 
   menu(){
@@ -57,6 +74,22 @@ export class ShoppingComponent implements OnInit {
     const ready = document.getElementById("ready");
     const finalize = document.getElementById("finalize");
     ready!.classList.remove('hidden');
-    finalize!.classList.add('hidden')
+    finalize!.classList.add('hidden');
+    
+    
+
+  }
+
+  Cancelar(){
+    this.productsShopping = [];
+  }
+
+  Eliminar(id:any){
+    for(let i = 0; i < this.productsShopping.length; i++){
+      if(this.productsShopping[i].id == id){
+        this.subtotal -= this.productsShopping[i].precio;
+        this.productsShopping.splice(i, 1);
+      }
+    }
   }
 }

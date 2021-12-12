@@ -34,7 +34,7 @@
 </div>
 
 <div class="pt-24">
-    <div id="summaryProducts">
+    <div *ngIf="productsShopping.length" id="summaryProducts">
         <div class="area-summary items-center">
             <button type="button" routerLink="/home" routerLinkActive="active">
                 <i class="fas fa-arrow-left icon-left ml-8"></i>
@@ -42,16 +42,16 @@
             <p class="summary">RESUMEN DE TU ORDEN</p>
         </div>
         <div class="grid grid-cols-3 mt-8 items-center p-4 summary-business">
-            <img src="./assets/Categories/Restaurantes/Burger King/Logo.jpg">
-            <p class="name-business text-center">Burger King</p>
+            <img src="http://localhost:3000/{{logo}}">
+            <p class="name-business text-center"> {{nombre}} </p>
             <div>
-                <button class="text-sm btn-cancel" type="button">CANCELAR ORDEN</button>
+                <button (click)="Cancelar()" class="text-sm btn-cancel" type="button">CANCELAR ORDEN</button>
             </div>
         </div>
-        <div *ngFor = "let res of resumen">
+        <div *ngFor = "let res of productsShopping">
             <div class="grid grid-cols-4 pb-4 mt-4 mb-4 p-4 items-center">
                 <div>
-                    <img src="{{res.imagen}}">
+                    <img src="http://localhost:3000/{{res.imagen}}">
                 </div>
                 <div class="ml-4">
                     <p class="name-product text-center">{{res.nombre}}</p>
@@ -61,14 +61,16 @@
                     <div class="cantidad-product p-2">{{res.cantidad}}</div>
                 </div>
                 <div class="ml-8">
-                    <i class="fas fa-trash-alt icon-trash"></i>
+                    <button (click)="Eliminar(res.id)" type="button">
+                        <i class="fas fa-trash-alt icon-trash"></i>
+                    </button>
                 </div>
             </div>
             <hr class="separation ml-20 mr-20"/>
         </div>
         <div class="grid grid-cols-2 summary-price">
             <p class="subtotal ml-4">Subtotal</p>
-            <p class="subtotalC">L 732.00</p>
+            <p class="subtotalC">L {{subtotal}}</p>
         </div>
         <button class="btn-procesar mt-32" (click)="processing()">PROCESAR ORDEN</button>
     </div>
@@ -82,16 +84,13 @@
             <p class="summary text-center">CARRITO</p>
         </div>
         <div class="grid grid-cols-3 mt-8 items-center p-4 summary-business">
-            <img src="./assets/Categories/Restaurantes/Burger King/Logo.jpg">
-            <p class="name-business text-center">Burger King</p>
-            <div>
-                <button class="text-sm btn-cancel" type="button">CANCELAR ORDEN</button>
-            </div>
+            <img src="http://localhost:3000/{{logo}}">
+            <p class="name-business text-center">{{nombre}}</p>
         </div>
-        <div *ngFor = "let res of resumen">
+        <div *ngFor = "let res of productsShopping">
             <div class="grid grid-cols-4 pb-4 mt-4 mb-4 p-4 items-center">
                 <div>
-                    <img src="{{res.imagen}}">
+                    <img src="http://localhost:3000/{{res.imagen}}">
                 </div>
                 <div class="ml-4">
                     <p class="name-product text-center">{{res.nombre}}</p>
@@ -100,16 +99,13 @@
                 <div>
                     <div class="cantidad-product p-2">{{res.cantidad}}</div>
                 </div>
-                <div class="ml-8">
-                    <i class="fas fa-trash-alt icon-trash"></i>
-                </div>
             </div>
             <hr class="separation ml-20 mr-20"/>
         </div>
         <div>
             <div class="grid grid-cols-2 summary-price">
                 <p class="subtotal ml-4">Subtotal</p>
-                <p class="subtotalC">L 732.00</p>
+                <p class="subtotalC">L {{subtotal}}</p>
             </div>
             <div class="grid grid-cols-2">
                 <p class="charge ml-4">Cargo por Entrega</p>
@@ -118,7 +114,7 @@
         </div>
         <div class="grid grid-cols-2 summary-price">
             <p class="subtotal ml-4">Total</p>
-            <p class="subtotalC">L 762.00</p>
+            <p class="subtotalC">L {{subtotal + 30}}.00</p>
         </div>
         <p class="name-business text-center">Dirección de Entrega</p>
         <div class="pl-20 pr-20 mt-4">
@@ -134,11 +130,11 @@
             </button>
             <p class="summary text-center">Orden</p>
         </div>
-        <p class="name-finalize text-center">Burger King</p>
-        <div *ngFor = "let res of resumen">
+        <p class="name-finalize text-center"> {{nombre}} </p>
+        <div *ngFor = "let res of productsShopping">
             <div class="grid grid-cols-4 pb-4 mt-4 mb-4 p-4 items-center">
                 <div>
-                    <img src="{{res.imagen}}">
+                    <img src="http://localhost:3000/{{res.imagen}}">
                 </div>
                 <div class="ml-4">
                     <p class="name-product text-center">{{res.nombre}}</p>
@@ -152,9 +148,9 @@
         </div>
         <div class="grid grid-cols-2 summary-price">
             <p class="subtotal ml-4">Total</p>
-            <p class="subtotalC">L 762.00</p>
+            <p class="subtotalC">L {{subtotal + 30}}.00</p>
         </div>
     </div>
 
-    <app-footer></app-footer>
+    <app-footer ></app-footer>
 </div>

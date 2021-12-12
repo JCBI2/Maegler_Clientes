@@ -28,7 +28,7 @@ export class MapComponent implements OnInit {
   private initMap(): void {
     this.map = L.map('map', {
       center: [14.064311443955246, -87.1751706646779],
-      zoom: 17
+      zoom: 18
     });
 
     const tiles = L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
