@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 import * as L from 'leaflet';
 
 @Component({
@@ -7,6 +7,9 @@ import * as L from 'leaflet';
   styleUrls: ['./map.component.css']
 })
 export class MapComponent implements OnInit {
+
+  
+  coordenadas: any;
 
   private map : any;
 
@@ -26,6 +29,7 @@ export class MapComponent implements OnInit {
 };
 
   private initMap(): void {
+    let temp: any;
     this.map = L.map('map', {
       center: [14.064311443955246, -87.1751706646779],
       zoom: 18
@@ -43,7 +47,6 @@ export class MapComponent implements OnInit {
     this.map.on('locationfound', (e: any) => {
       var radius = e.accuracy;
       console.log(e.latlng)
-
       L.marker(e.latlng, this.icon).addTo(this.map)
     });
   }

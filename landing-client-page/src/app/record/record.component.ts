@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {RECORD, Record} from '../Listado-Business';
+import { OrdenesService } from '../ordenes.service';
 
 @Component({
   selector: 'app-record',
@@ -9,6 +10,12 @@ import {RECORD, Record} from '../Listado-Business';
 export class RecordComponent implements OnInit {
 
   record = RECORD;
+
+  activas: any=[];
+
+  historial: any=[];
+
+  constructor(private ordenesService: OrdenesService){}
 
   ngOnInit(): void {
   }
@@ -46,6 +53,18 @@ export class RecordComponent implements OnInit {
     btnActivas!.classList.add('selected');
     historial!.classList.add('hidden');
     btnHistorial!.classList.remove('selected');
+    
+    this.activas = [];
+
+    this.ordenesService.obtenerOrdenes(localStorage.getItem("id")).subscribe((res:any)=>{
+      console.log(res);
+      for(let i = 0; i < res.length; i++){
+        if(res[i].estado != "Entregada"){
+          this.activas.push(res[i]);
+        }
+      }
+    },
+    error=>console.log(error))
   };
 
   Historial(){
@@ -59,6 +78,17 @@ export class RecordComponent implements OnInit {
     btnHistorial!.classList.add('selected');
     activas!.classList.add('hidden');
     btnActivas!.classList.remove('selected');
+
+    this.historial = [];
+    this.ordenesService.obtenerOrdenes(localStorage.getItem("id")).subscribe((res:any)=>{
+      console.log(res);
+      for(let i = 0; i < res.length; i++){
+        if(res[i].estado == "Entregada"){
+          this.historial.push(res[i]);
+        }
+      }
+    },
+    error=>console.log(error))
   };
 
 }

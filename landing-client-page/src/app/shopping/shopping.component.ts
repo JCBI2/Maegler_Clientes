@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { OrdenesService } from '../ordenes.service';
 
 @Component({
   selector: 'app-shopping',
@@ -8,9 +8,10 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 })
 export class ShoppingComponent implements OnInit {
 
-  constructor(){}
+  constructor(private ordenesService: OrdenesService){}
 
   productsShopping: any=[];
+  coor = {"Lat": 14.09024, "Lng": -87.2087552};
   nombre = "";
   logo = "";
   subtotal = 0;
@@ -28,6 +29,8 @@ export class ShoppingComponent implements OnInit {
       this.productsShopping.push(add[i])
     }
     console.log(this.subtotal);
+
+    
   }
 
   menu(){
@@ -76,6 +79,10 @@ export class ShoppingComponent implements OnInit {
     ready!.classList.remove('hidden');
     finalize!.classList.add('hidden');
     
+    this.ordenesService.subirOrden(this.nombre, this.productsShopping, this.logo, this.coor, this.subtotal, this.subtotal + 30)
+    .subscribe((res:any)=>{
+      console.log(res);
+    })
     
 
   }

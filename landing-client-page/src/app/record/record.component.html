@@ -40,16 +40,15 @@
     </div>
 
     <div id="activas" class="hidden mb-60">
-        <div *ngFor = "let rec of record">
+        <div *ngFor = "let rec of activas">
             <div class="grid grid-cols-2 card-record mb-8">
-                <img class="img-record" src="{{rec.logo}}">
+                <img class="img-record" src="http://localhost:3000/{{rec.logo}}">
                 <div>
                     <div class="grid grid-cols-2">
-                        <p class="order-number">Orden #{{rec.id}}</p>
-                        <p class="fecha-record">{{rec.fecha}}</p>
+                        <p class="fecha-record">{{rec.createdAt.substring(0,10)}}</p>
                     </div>
                     <div class="information">
-                        {{rec.categoria}} - {{rec.empresa}}
+                        {{rec.nombre_empresa}}
                     </div>
                     <hr class="separador"/>
                     <div class="total">
@@ -62,16 +61,15 @@
 
 
     <div id="historial" class="hidden mb-60">
-        <div *ngFor = "let rec of record">
+        <div *ngFor = "let rec of historial">
             <div class="grid grid-cols-2 card-record mb-8">
-                <img class="img-record" src="{{rec.logo}}">
+                <img class="img-record" src="http://localhost:3000/{{rec.logo}}">
                 <div>
                     <div class="grid grid-cols-2">
-                        <p class="order-number">Orden #{{rec.id}}</p>
-                        <p class="fecha-record">{{rec.fecha}}</p>
+                        <p class="fecha-record">{{rec.createdAt.substring(0,10)}}</p>
                     </div>
                     <div class="information">
-                        {{rec.categoria}} - {{rec.empresa}}
+                       {{rec.nombre_empresa}}
                     </div>
                     <hr class="separador"/>
                     <div class="total">

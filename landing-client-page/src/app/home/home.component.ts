@@ -42,6 +42,7 @@ export class HomeComponent implements OnInit {
     this.usuarioService.datos().subscribe((res:any)=>{
       console.log(res);
       this.Usuario = res.nombre_completo
+      localStorage.setItem("id", res._id)
     })
   }
 

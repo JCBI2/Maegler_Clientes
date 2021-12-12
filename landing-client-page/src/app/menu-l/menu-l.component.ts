@@ -15,6 +15,7 @@ export class MenuLComponent implements OnInit {
 
   signOut(){
     this.route.navigate(['']);
+    localStorage.setItem("token",'');
   }
 
 }
