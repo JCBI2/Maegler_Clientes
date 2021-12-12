@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { OrdenesService } from '../ordenes.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-registration-client',
@@ -9,7 +10,7 @@ import { OrdenesService } from '../ordenes.service';
 })
 export class RegistrationClientComponent implements OnInit {
 
-  constructor(private ordenesService: OrdenesService) { }
+  constructor(private ordenesService: OrdenesService, private route: Router) { }
 
   formRegistration = new FormGroup({
     Nombre: new FormControl('', [Validators.required]),
@@ -56,6 +57,7 @@ export class RegistrationClientComponent implements OnInit {
           ).subscribe(
             res=>{
               console.log(res);
+              this.route.navigate(['']);
             },
             error=>console.log(error)
           );
