@@ -42,7 +42,7 @@
     <div id="activas" class="hidden mb-60">
         <div *ngFor = "let rec of activas">
             <div class="grid grid-cols-2 card-record mb-8">
-                <img class="img-record" src="http://localhost:3000/{{rec.logo}}">
+                <img class="img-record" src="https://maegler.herokuapp.com/{{rec.logo}}">
                 <div>
                     <div class="grid grid-cols-2">
                         <p class="fecha-record">{{rec.createdAt.substring(0,10)}}</p>
@@ -63,7 +63,7 @@
     <div id="historial" class="hidden mb-60">
         <div *ngFor = "let rec of historial">
             <div class="grid grid-cols-2 card-record mb-8">
-                <img class="img-record" src="http://localhost:3000/{{rec.logo}}">
+                <img class="img-record" src="https://maegler.herokuapp.com/{{rec.logo}}">
                 <div>
                     <div class="grid grid-cols-2">
                         <p class="fecha-record">{{rec.createdAt.substring(0,10)}}</p>

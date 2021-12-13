@@ -42,7 +42,7 @@
             <p class="summary">RESUMEN DE TU ORDEN</p>
         </div>
         <div class="grid grid-cols-3 mt-8 items-center p-4 summary-business">
-            <img src="http://localhost:3000/{{logo}}">
+            <img src="https://maegler.herokuapp.com/{{logo}}">
             <p class="name-business text-center"> {{nombre}} </p>
             <div>
                 <button (click)="Cancelar()" class="text-sm btn-cancel" type="button">CANCELAR ORDEN</button>
@@ -51,7 +51,7 @@
         <div *ngFor = "let res of productsShopping">
             <div class="grid grid-cols-4 pb-4 mt-4 mb-4 p-4 items-center">
                 <div>
-                    <img src="http://localhost:3000/{{res.imagen}}">
+                    <img src="https://maegler.herokuapp.com/{{res.imagen}}">
                 </div>
                 <div class="ml-4">
                     <p class="name-product text-center">{{res.nombre}}</p>
@@ -84,13 +84,13 @@
             <p class="summary text-center">CARRITO</p>
         </div>
         <div class="grid grid-cols-3 mt-8 items-center p-4 summary-business">
-            <img src="http://localhost:3000/{{logo}}">
+            <img src="https://maegler.herokuapp.com/{{logo}}">
             <p class="name-business text-center">{{nombre}}</p>
         </div>
         <div *ngFor = "let res of productsShopping">
             <div class="grid grid-cols-4 pb-4 mt-4 mb-4 p-4 items-center">
                 <div>
-                    <img src="http://localhost:3000/{{res.imagen}}">
+                    <img src="https://maegler.herokuapp.com/{{res.imagen}}">
                 </div>
                 <div class="ml-4">
                     <p class="name-product text-center">{{res.nombre}}</p>
@@ -134,7 +134,7 @@
         <div *ngFor = "let res of productsShopping">
             <div class="grid grid-cols-4 pb-4 mt-4 mb-4 p-4 items-center">
                 <div>
-                    <img src="http://localhost:3000/{{res.imagen}}">
+                    <img src="https://maegler.herokuapp.com/{{res.imagen}}">
                 </div>
                 <div class="ml-4">
                     <p class="name-product text-center">{{res.nombre}}</p>

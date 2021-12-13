@@ -63,7 +63,7 @@
     <div id="showCategories" class="grid grid-cols-3 p-4">
       <div class="containter-categorie m-1" *ngFor="let categoria of categorys" (click)="onSelectCategory(categoria)">
           <div class="m-auto container-img">
-              <img src="http://localhost:3000/{{categoria.imagen}}">
+              <img src="https://maegler.herokuapp.com/{{categoria.imagen}}">
           </div>
           <p class="text-center font-bold name-categorie mb-1">{{categoria.nombre}}</p>
       </div>
@@ -74,10 +74,10 @@
         
         <div class="card-business grid grid-cols-3 mb-8" *ngFor="let empresa of business" (click)="onSelectBusiness(empresa)">
           <div>
-            <img class="banner-business" src="http://localhost:3000/{{empresa.banner}}">
+            <img class="banner-business" src="https://maegler.herokuapp.com/{{empresa.banner}}">
           </div>
           <div>
-            <img class="logo-business" src="http://localhost:3000/{{empresa.logo}}">
+            <img class="logo-business" src="https://maegler.herokuapp.com/{{empresa.logo}}">
           </div>
           <div>
             <h3 class="name-business text-center">{{empresa.nombre}}</h3>
@@ -90,7 +90,7 @@
     <div id="showProducts" class="hidden pl-4 pr-4 mt-4">
         <div class="card-business grid grid-cols-3 mb-8" *ngFor="let producto of products">
             <div class="img-product p-2">
-              <img src="http://localhost:3000/{{producto.imagen}}">
+              <img src="https://maegler.herokuapp.com/{{producto.imagen}}">
             </div>
             <div class="information-product">
               <h3 class="name-product text-center">{{producto.nombre}}</h3>
