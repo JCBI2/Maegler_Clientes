@@ -10,7 +10,7 @@ export class UsuariosService {
   constructor(private httpClient: HttpClient) { }
 
   ingresar(correo: any, contra: any){
-    return this.httpClient.post(`http://localhost:3000/clientes/login`,{
+    return this.httpClient.post(`https://maegler.herokuapp.com/clientes/login`,{
       email: correo,
       password: contra
     });
@@ -18,7 +18,7 @@ export class UsuariosService {
 
   datos(){
     let token: string = localStorage.getItem("token") || "";
-    return this.httpClient.get("http://localhost:3000/clientes/client",{
+    return this.httpClient.get("https://maegler.herokuapp.com/clientes/client",{
       headers: {"Authorization": token}
     })
   }

@@ -11,7 +11,7 @@ export class OrdenesService {
 
 
   crearUsuario(nombre_completo:any, correo:any, contra:any){
-    return this.httpClient.post(`http://localhost:3000/clientes`,{
+    return this.httpClient.post(`https://maegler.herokuapp.com/clientes`,{
       nombre: nombre_completo,
       email: correo,
       password: contra
@@ -20,7 +20,7 @@ export class OrdenesService {
 
   subirOrden(empresa: any, products: any, log: any, dir: any, sub: any, to: any){
     console.log(dir)
-    return this.httpClient.post("http://localhost:3000/ordenes",{
+    return this.httpClient.post("https://maegler.herokuapp.com/ordenes",{
       id_cliente: localStorage.getItem("id"),
       empresa: empresa,
       productos:  products,
@@ -32,6 +32,6 @@ export class OrdenesService {
   }
 
   obtenerOrdenes(id: any){
-    return this.httpClient.get(`http://localhost:3000/ordenes/${id}/alls`,{})
+    return this.httpClient.get(`https://maegler.herokuapp.com/ordenes/${id}/alls`,{})
   }
 }

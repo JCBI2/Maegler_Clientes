@@ -11,6 +11,6 @@ export class CategoriasService {
 
 
   obtenerCategorias():Observable<any>{
-    return this.httpClient.get('http://localhost:3000/categorias', {});
+    return this.httpClient.get('https://maegler.herokuapp.com/categorias', {});
   }
 }
